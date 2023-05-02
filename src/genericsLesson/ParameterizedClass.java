@@ -1,5 +1,9 @@
 package genericsLesson;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class ParameterizedClass {
     public static void main(String[] args) {
         SomeParameterizedClass<String, Integer> someParameterizedClass = new SomeParameterizedClass<>("Value 1", 1);
@@ -23,7 +27,22 @@ public class ParameterizedClass {
         System.out.println(integerOtherSomeParameterizedClass);
 
 
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(2);
+        integerList.add(5);
+        integerList.add(0);
+
+        System.out.println(myParameterizedMethod(integerList));
+        Collections.sort(integerList);
+        System.out.println(myParameterizedMethod(integerList));
+
+
     }
+
+    public static <T> T myParameterizedMethod(List<T> tList) {
+        return tList.get(0);
+    }
+
 }
 
 class SomeParameterizedClass<V1, V2> {
