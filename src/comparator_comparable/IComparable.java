@@ -14,7 +14,7 @@ public class IComparable {
         carList.add(new Car("Kia", 2019, 1.6));
 
         carList.forEach(System.out::println);
-        Collections.sort(carList);
+        carList.sort(new ComparatorByEngineDisplacement());
         carList.forEach(System.out::println);
 
     }
